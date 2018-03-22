@@ -14,7 +14,7 @@ namespace GuaranteedRateProject.Controllers
     {  
         //GET /records/birthdate - returns records sorted by birthdate
         [Route("api/records/birthdate")]
-        [AcceptVerbs("GET")]
+        [HttpGet]
         public IHttpActionResult GetByBirthDate()
         { 
             m.ListOfPersons = m.ListOfPersons.OrderBy(c => c.DateOfBirth).ToList();
@@ -24,7 +24,7 @@ namespace GuaranteedRateProject.Controllers
 
         //GET /records/gender - returns records sorted by gender
         [Route("api/records/gender")]
-        [AcceptVerbs("GET")]
+        [HttpGet]
         public IHttpActionResult GetByGender()
         { 
             m.ListOfPersons = m.ListOfPersons.OrderBy(c => c.Gender).ToList();
@@ -34,7 +34,7 @@ namespace GuaranteedRateProject.Controllers
 
         //GET /records/name - returns records sorted by name
         [Route("api/records/name")]
-        [AcceptVerbs("GET")]
+        [HttpGet]
         public IHttpActionResult GetByName()
         { 
             m.ListOfPersons = m.ListOfPersons.OrderBy(c => c.LastName).ToList();
@@ -44,7 +44,7 @@ namespace GuaranteedRateProject.Controllers
 
         //POST /records - Post a single data line in any of the 3 formats supported by your existing code
         [Route("api/records")]
-        [AcceptVerbs("POST")]
+        [HttpPost]
         public IHttpActionResult Post([FromBody]string value)
         {
             Methods methods = new Methods(); 

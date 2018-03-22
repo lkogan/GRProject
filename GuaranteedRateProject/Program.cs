@@ -21,12 +21,19 @@ namespace GuaranteedRateProject
 
         static void Main(string[] args)
         { 
-            m.ListOfPersons = new List<Person>();
-            ProcessFiles();
-            DisplayData();
-             
-            m.ListOfPersons = new List<Person>();
-            PerformWebAPIOperations(); 
+            try
+            {
+                m.ListOfPersons = new List<Person>();
+                ProcessFiles();
+                DisplayData();
+
+                m.ListOfPersons = new List<Person>();
+                PerformWebAPIOperations();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            } 
         }
 
         static void PerformWebAPIOperations()
