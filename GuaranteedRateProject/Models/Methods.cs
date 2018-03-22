@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuaranteedRateProject.Helpers
+namespace GuaranteedRateProject.Models
 {
-    class Methods
+    public class Methods
     { 
         public Result IsValidFile(string FilePath, string allowedExtension)
         {

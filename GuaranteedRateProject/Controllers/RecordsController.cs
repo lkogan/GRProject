@@ -1,5 +1,4 @@
-﻿using GuaranteedRateProject.Helpers;
-using GuaranteedRateProject.Models;
+﻿using GuaranteedRateProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
