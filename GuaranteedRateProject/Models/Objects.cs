@@ -14,6 +14,11 @@ namespace GuaranteedRateProject.Models
         public string FavoriteColor { get; set; }
         public DateTime DateOfBirth { get; set; }
     }
+     
+    public static class Model
+    {
+        public static List<Person> ListOfPersons = new List<Person>();
+    }
 
     public class Result
     {
@@ -25,11 +30,5 @@ namespace GuaranteedRateProject.Models
             get { return _information ?? string.Empty; }
             set { _information = value; }
         }
-    }
-
-    public static class Model
-    {
-        public static List<Person> ListOfPersons = new List<Person>();
-    }
-     
+    } 
 }

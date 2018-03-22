@@ -1,11 +1,13 @@
-﻿using GuaranteedRateProject.Models;
+﻿using GuaranteedRateProject.Helpers;
+using GuaranteedRateProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
-using GuaranteedRateProject.Models;
+using m = GuaranteedRateProject.Models.Model;
 
 namespace GuaranteedRateProject.Controllers
 { 
@@ -15,31 +17,41 @@ namespace GuaranteedRateProject.Controllers
         [Route("api/records/birthdate")]
         [AcceptVerbs("GET")]
         public IHttpActionResult GetByBirthDate()
-        {
-            return Ok();
+        { 
+            m.ListOfPersons = m.ListOfPersons.OrderBy(c => c.DateOfBirth).ToList();
+
+            return Json(m.ListOfPersons);
         }
 
         //GET /records/gender - returns records sorted by gender
         [Route("api/records/gender")]
         [AcceptVerbs("GET")]
         public IHttpActionResult GetByGender()
-        {
-            return Ok();
+        { 
+            m.ListOfPersons = m.ListOfPersons.OrderBy(c => c.Gender).ToList();
+
+            return Json(m.ListOfPersons);
         }
 
         //GET /records/name - returns records sorted by name
         [Route("api/records/name")]
         [AcceptVerbs("GET")]
         public IHttpActionResult GetByName()
-        {
-            return Ok();
+        { 
+            m.ListOfPersons = m.ListOfPersons.OrderBy(c => c.LastName).ToList();
+
+            return Json(m.ListOfPersons);
         }
 
         //POST /records - Post a single data line in any of the 3 formats supported by your existing code
         [Route("api/records")]
         [AcceptVerbs("POST")]
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post([FromBody]string value)
         {
+            Methods methods = new Methods(); 
+            bool LinePopulated = methods.LinePopulated(value);
+
+            return Ok(value);
         } 
     }
 }

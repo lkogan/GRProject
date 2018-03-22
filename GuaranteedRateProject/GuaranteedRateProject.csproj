@@ -96,6 +96,9 @@
     <Content Include="TestData\Comma+Space Separated Data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TestData\Mixed Data.nfo">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="TestData\Pipe+Space Separated Data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
